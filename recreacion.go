@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 )
 
 func sumacuadrados(num int) int {
@@ -15,7 +16,16 @@ func sumacuadrados(num int) int {
 }
 
 func ListSquared(m, n int) [][]int {
-
+	resultado := [][]int{}
+	for i := m; i <= n; i++ {
+		raiz := math.Sqrt(float64(sumacuadrados(i)))
+		raizentera := float64(int(math.Sqrt(float64(sumacuadrados(i)))))
+		if raiz == raizentera {
+			aux := []int{i,sumacuadrados(i)}
+			resultado = append(resultado, aux)
+		}
+	}
+	return resultado
 }
 
 func main() {
