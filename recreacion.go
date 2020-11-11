@@ -4,8 +4,18 @@ import (
 	"fmt"
 )
 
+func sumacuadrados(num int) int {
+	var suma int
+	for i := 1; i <= num; i++ {
+		if num%i == 0 {
+			suma += i * i
+		}
+	}
+	return suma
+}
+
 func ListSquared(m, n int) [][]int {
-	// your code
+
 }
 
 func main() {
